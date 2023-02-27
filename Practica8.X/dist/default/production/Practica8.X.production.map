@@ -1,0 +1,60 @@
+MPLINK 4.51, LINKER
+Linker Map File - Created Fri Nov 11 23:59:20 2022
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000005    program   0x0001ac
+.config_2007_BUILD/DEFAULT/PRODUCTION/PRACTIC       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000005    0x0000da      
+                            0x002007    0x002007      
+            218 out of 1094 program addresses used, program memory utilization is 19%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              Antirrebote   0x00000f    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+                  Barrido   0x000012    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+                   Inicio   0x000005    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+                     LOOP   0x0000a6    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+                     Leer   0x00000c    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+            ParpadeoPortA   0x0000bb    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+            ParpadeoPortB   0x0000cb    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+                    RESET   0x000000    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+              RETARDO_05S   0x0000a0    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+            Retardo_UnSeg   0x0000ad    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+             _.org_1_00B5   0x0000b5    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+             _.org_1_00B7   0x0000b7    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+             _.org_1_00B9   0x0000b9    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    RESET   0x000000    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+                   Inicio   0x000005    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+                     Leer   0x00000c    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+              Antirrebote   0x00000f    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+                  Barrido   0x000012    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+              RETARDO_05S   0x0000a0    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+                     LOOP   0x0000a6    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+            Retardo_UnSeg   0x0000ad    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+             _.org_1_00B5   0x0000b5    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+             _.org_1_00B7   0x0000b7    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+             _.org_1_00B9   0x0000b9    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+            ParpadeoPortA   0x0000bb    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+            ParpadeoPortB   0x0000cb    program     static C:\Users\jesus\Documents\Micros\Practica8.X\Practica8.asm
+
+

@@ -1,0 +1,235 @@
+MPLINK 4.51, LINKER
+Linker Map File - Created Fri Dec 02 14:07:08 2022
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000004    program   0x000002
+                   .org_2       code   0x000005    program   0x000706
+.config_2007_BUILD/DEFAULT/PRODUCTION/PRACTIC       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000004    0x000387      
+                            0x002007    0x002007      
+            904 out of 1094 program addresses used, program memory utilization is 82%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                       A4   0x00016d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       A5   0x00017c    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Ab5   0x00018b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       B4   0x00020f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Bb4   0x000137    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Bb5   0x000144    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       C5   0x0001f1    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       C6   0x000200    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       D4   0x0000e9    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       D5   0x000151    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      DO5   0x00029d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     DO5_   0x000324    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                      DO6   0x0002d1    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     DO6_   0x000374    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                      Db4   0x0001c3    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Db5   0x0001d0    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       E4   0x0000fc    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       E5   0x00015e    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Eb5   0x0001d9    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       F4   0x000198    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       F5   0x0001a7    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       F6   0x0001b4    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      FA4   0x0002a5    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     FA4_   0x000332    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                      FA5   0x0002a9    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     FA5_   0x000339    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                FIN_INTER   0x0000e3    program     static C:\Users\jesus\Documents\Micros\Practica12.X\Practica12.asm
+               FairyTheme   0x000010    program     static C:\Users\jesus\Documents\Micros\Practica12.X\Practica12.asm
+                       G4   0x00010e    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       G5   0x00011f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Gb4   0x0001e8    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Gb5   0x00012e    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                    INTER   0x00006b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\Practica12.asm
+                   Inicio   0x000005    program     static C:\Users\jesus\Documents\Micros\Practica12.X\Practica12.asm
+                      LA4   0x0002a1    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     LA4_   0x00032b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                      LA5   0x000288    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     LA5_   0x000303    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     LAb5   0x0002ca    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                    LAb5_   0x00036a    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                      MI4   0x000271    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     MI4_   0x0002e0    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                      MI5   0x000281    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     MI5_   0x0002f9    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     MIb5   0x0002b0    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                    MIb5_   0x000343    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+    R1Decima_BucleExterno   0x000263    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+   R1Decima_BucleExterno2   0x000261    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+    R1Decima_BucleInterno   0x000265    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+        R1ms_BucleExterno   0x00024d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+        R1ms_BucleInterno   0x00024f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      RE4   0x00026d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     RE4_   0x0002dc    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                      RE5   0x00027d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     RE5_   0x0002f2    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                    RESET   0x000000    program     static C:\Users\jesus\Documents\Micros\Practica12.X\Practica12.asm
+                     REb4   0x0002b7    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                    REb4_   0x00034d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     REb5   0x0002bb    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                    REb5_   0x000351    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+            RetardoMicros   0x000239    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+        Retardo_100micros   0x000233    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+            Retardo_100ms   0x00023f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+         Retardo_10micros   0x000226    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+             Retardo_10ms   0x000245    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardo_10s   0x000257    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+          Retardo_1Decima   0x000260    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardo_1ms   0x00024b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+               Retardo_1s   0x00025d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+        Retardo_200micros   0x000230    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+            Retardo_200ms   0x00023d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+         Retardo_20micros   0x000238    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+             Retardo_20ms   0x000243    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardo_20s   0x000255    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardo_2ms   0x000249    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+               Retardo_2s   0x00025b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+          Retardo_4micros   0x00022c    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+        Retardo_500micros   0x00022d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+            Retardo_500ms   0x00025f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+         Retardo_50micros   0x000235    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+             Retardo_50ms   0x000241    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+          Retardo_5micros   0x00022b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardo_5ms   0x000247    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+               Retardo_5s   0x000259    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardos_ms   0x00024c    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+            Rmicros_Bucle   0x00023a    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      SI4   0x0002d8    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     SI4_   0x000381    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     SIb4   0x000279    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                    SIb4_   0x0002eb    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     SIb5   0x0002bf    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                    SIb5_   0x000358    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     SOL4   0x000275    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                    SOL4_   0x0002e4    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     SOL5   0x00028f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                    SOL5_   0x000310    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                    SOLb4   0x0002c6    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                   SOLb4_   0x000362    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                    SOLb5   0x000296    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                   SOLb5_   0x00031a    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    RESET   0x000000    program     static C:\Users\jesus\Documents\Micros\Practica12.X\Practica12.asm
+                   Inicio   0x000005    program     static C:\Users\jesus\Documents\Micros\Practica12.X\Practica12.asm
+               FairyTheme   0x000010    program     static C:\Users\jesus\Documents\Micros\Practica12.X\Practica12.asm
+                    INTER   0x00006b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\Practica12.asm
+                FIN_INTER   0x0000e3    program     static C:\Users\jesus\Documents\Micros\Practica12.X\Practica12.asm
+                       D4   0x0000e9    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       E4   0x0000fc    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       G4   0x00010e    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       G5   0x00011f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Gb5   0x00012e    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Bb4   0x000137    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Bb5   0x000144    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       D5   0x000151    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       E5   0x00015e    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       A4   0x00016d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       A5   0x00017c    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Ab5   0x00018b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       F4   0x000198    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       F5   0x0001a7    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       F6   0x0001b4    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Db4   0x0001c3    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Db5   0x0001d0    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Eb5   0x0001d9    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      Gb4   0x0001e8    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       C5   0x0001f1    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       C6   0x000200    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                       B4   0x00020f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+         Retardo_10micros   0x000226    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+          Retardo_5micros   0x00022b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+          Retardo_4micros   0x00022c    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+        Retardo_500micros   0x00022d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+        Retardo_200micros   0x000230    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+        Retardo_100micros   0x000233    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+         Retardo_50micros   0x000235    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+         Retardo_20micros   0x000238    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+            RetardoMicros   0x000239    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+            Rmicros_Bucle   0x00023a    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+            Retardo_200ms   0x00023d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+            Retardo_100ms   0x00023f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+             Retardo_50ms   0x000241    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+             Retardo_20ms   0x000243    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+             Retardo_10ms   0x000245    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardo_5ms   0x000247    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardo_2ms   0x000249    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardo_1ms   0x00024b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardos_ms   0x00024c    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+        R1ms_BucleExterno   0x00024d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+        R1ms_BucleInterno   0x00024f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardo_20s   0x000255    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+              Retardo_10s   0x000257    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+               Retardo_5s   0x000259    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+               Retardo_2s   0x00025b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+               Retardo_1s   0x00025d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+            Retardo_500ms   0x00025f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+          Retardo_1Decima   0x000260    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+   R1Decima_BucleExterno2   0x000261    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+    R1Decima_BucleExterno   0x000263    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+    R1Decima_BucleInterno   0x000265    program     static C:\Users\jesus\Documents\Micros\Practica12.X\RETARDOS_NOTAS.INC
+                      RE4   0x00026d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                      MI4   0x000271    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     SOL4   0x000275    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     SIb4   0x000279    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                      RE5   0x00027d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                      MI5   0x000281    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                      LA5   0x000288    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     SOL5   0x00028f    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                    SOLb5   0x000296    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                      DO5   0x00029d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                      LA4   0x0002a1    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                      FA4   0x0002a5    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                      FA5   0x0002a9    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     MIb5   0x0002b0    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     REb4   0x0002b7    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     REb5   0x0002bb    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     SIb5   0x0002bf    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                    SOLb4   0x0002c6    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     LAb5   0x0002ca    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                      DO6   0x0002d1    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                      SI4   0x0002d8    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_A.INC
+                     RE4_   0x0002dc    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     MI4_   0x0002e0    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                    SOL4_   0x0002e4    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                    SIb4_   0x0002eb    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     RE5_   0x0002f2    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     MI5_   0x0002f9    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     LA5_   0x000303    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                    SOL5_   0x000310    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                   SOLb5_   0x00031a    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     DO5_   0x000324    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     LA4_   0x00032b    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     FA4_   0x000332    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     FA5_   0x000339    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                    MIb5_   0x000343    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                    REb4_   0x00034d    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                    REb5_   0x000351    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                    SIb5_   0x000358    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                   SOLb4_   0x000362    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                    LAb5_   0x00036a    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     DO6_   0x000374    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+                     SI4_   0x000381    program     static C:\Users\jesus\Documents\Micros\Practica12.X\NOTAS_B.INC
+
+

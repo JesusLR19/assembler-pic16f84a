@@ -1,0 +1,56 @@
+MPLINK 4.51, LINKER
+Linker Map File - Created Fri Nov 11 23:57:40 2022
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .cinit    romdata   0x000001    program   0x000004
+                   .org_1       code   0x000005    program   0x00006e
+.config_2007_BUILD/DEFAULT/PRODUCTION/PRACTIC       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000002      
+                            0x000005    0x00003b      
+                            0x002007    0x002007      
+            59 out of 1094 program addresses used, program memory utilization is 5%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+              Antirrebote   0x000016    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+             Antirrebote1   0x00001d    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+              ChecaBoton1   0x000010    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+              ChecaBoton2   0x000013    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+                  Display   0x000024    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+                   Inicio   0x000005    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+               LecturaPBs   0x000010    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+                    RESET   0x000000    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+                    RESTA   0x00001f    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+                     SUMA   0x000018    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+                    TABLA   0x000028    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    RESET   0x000000    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+                   Inicio   0x000005    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+              ChecaBoton1   0x000010    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+               LecturaPBs   0x000010    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+              ChecaBoton2   0x000013    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+              Antirrebote   0x000016    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+                     SUMA   0x000018    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+             Antirrebote1   0x00001d    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+                    RESTA   0x00001f    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+                  Display   0x000024    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+                    TABLA   0x000028    program     static C:\Users\jesus\Documents\Micros\Practica10.X\Practica10.asm
+
+

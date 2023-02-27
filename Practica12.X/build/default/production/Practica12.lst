@@ -1,0 +1,1662 @@
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001     list p=16F84A
+                      00002 #include P16F84a.inc
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC16F84A processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      00208         LIST
+2007   3FF1           00003     __CONFIG  _CP_OFF & _WDT_OFF & _PWRTE_ON & _XT_OSC
+                      00004 
+                      00005 RESET ORG 0x00
+0000   2???           00006         GOTO Inicio
+                      00007         ORG 0x04
+0004   2???           00008         GOTO INTER
+                      00009         ORG 0X05
+                      00010 
+                      00011     CBLOCK 0x0C
+  0000000C            00012     C_Tempo
+  0000000D            00013     R_ContA
+  0000000E            00014     R_ContB
+  0000000F            00015     R_ContC
+  00000010            00016     SAVE_W
+  00000011            00017     SAVE_STATUS
+                      00018     ENDC
+                      00019 ;
+0005                  00020 Inicio
+0005   1683           00021     BSF STATUS, RP0
+0006   3001           00022     MOVLW b'00001'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0007   0085           00023     MOVWF TRISA
+0008   3001           00024     MOVLW b'00000001'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0009   0086           00025     MOVWF TRISB
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000A   1701           00026     BSF OPTION_REG,6
+000B   1283           00027     BCF STATUS,RP0
+000C   3090           00028     MOVLW B'10010000'
+000D   008B           00029     MOVWF INTCON
+000E   0185           00030     CLRF PORTA
+000F   0186           00031     CLRF PORTB
+                      00032 
+0010                  00033 FairyTheme
+                      00034 ;387ms BPM
+0010   2???           00035     CALL RE4;   ///////////  D4  ////////////
+                      00036 ;    CALL RE4;   ///////////  D4  ////////////
+                      00037 ;    CALL RE4;   ///////////  D4  ////////////
+0011   2???           00038     CALL MI4;   ///////////  E4  ////////////
+                      00039 ;    CALL MI4;   ///////////  E4  ////////////
+                      00040 ;    CALL MI4;   ///////////  E4  ////////////
+0012   2???           00041     CALL SOL4;  ///////////  G4  ////////////
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00042 ;    CALL SOL4;  ///////////  G4  ////////////
+0013   2???           00043     CALL SIb4;  ///////////  Bb4 ////////////
+0014   2???           00044     CALL RE5;   ///////////  D5  ////////////
+0015   2???           00045     CALL MI5;   ///////////  E5  ////////////
+                      00046 ;       ===================================================================
+                      00047 ;       ===================================================================
+0016   2???           00048     CALL Retardo_1ms
+0017   2???           00049     CALL LA5;    ///////////  A5  ////////////
+0018   2???           00050     CALL RE5;    ///////////  D5  ////////////
+0019   2???           00051     CALL SIb4;   ///////////  Bb4 ////////////
+001A   2???           00052     CALL SOL4;   ///////////  G4  ////////////
+                      00053 
+001B   2???           00054     CALL SOL5;   ///////////  G5  ////////////
+001C   2???           00055     CALL RE5;    ///////////  D5  ////////////
+001D   2???           00056     CALL SIb4;   ///////////  Bb4 ////////////
+001E   2???           00057     CALL SOL4;   ///////////  G4  ////////////
+                      00058 
+001F   2???           00059     CALL SOLb5;  ///////////  Gb5  ///////////
+0020   2???           00060     CALL RE5;    ///////////  D5  ////////////
+0021   2???           00061     CALL SIb4;   ///////////  Bb4 ////////////
+0022   2???           00062     CALL SOL4;   ///////////  G4  ////////////
+                      00063 
+0023   2???           00064     CALL SOL5;   ///////////  G5  ////////////
+0024   2???           00065     CALL RE5;    ///////////  D5  ////////////
+0025   2???           00066     CALL SIb4;   ///////////  Bb4 ////////////
+0026   2???           00067     CALL SOL4;   ///////////  G4  ////////////
+0027   2???           00068     CALL Retardo_1ms
+                      00069 ;       ===================================================================
+                      00070 ;       ===================================================================
+0028   2???           00071     CALL SOL5;   ///////////  G5  ////////////
+0029   2???           00072     CALL DO5;    ///////////  C5  ////////////
+002A   2???           00073     CALL LA4;    ///////////  A4  ////////////
+002B   2???           00074     CALL FA4;    ///////////  F4  ////////////
+                      00075 
+002C   2???           00076     CALL FA5;    ///////////  F5  ////////////
+002D   2???           00077     CALL DO5;    ///////////  C5  ////////////
+002E   2???           00078     CALL LA4;    ///////////  A4  ////////////
+002F   2???           00079     CALL FA4;    ///////////  F4  ////////////
+                      00080 
+0030   2???           00081     CALL MI5;    ///////////  E5  ////////////
+0031   2???           00082     CALL DO5;    ///////////  C5  ////////////
+0032   2???           00083     CALL LA4;    ///////////  A4  ////////////
+0033   2???           00084     CALL FA4;    ///////////  F4  ////////////
+                      00085 
+0034   2???           00086     CALL FA5;    ///////////  F5  ////////////
+0035   2???           00087     CALL DO5;    ///////////  C5  ////////////
+0036   2???           00088     CALL LA4;    ///////////  A4  ////////////
+0037   2???           00089     CALL FA4;    ///////////  F4  ////////////
+                      00090 ;       ===================================================================
+                      00091 ;       ===================================================================
+0038   2???           00092     CALL FA5;   ///////////  F5  ////////////
+0039   2???           00093     CALL SIb4;  ///////////  Bb4 ////////////
+003A   2???           00094     CALL SOL4;  ///////////  G4  ////////////
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+003B   2???           00095     CALL MI4;   ///////////  E4  ////////////
+                      00096 
+003C   2???           00097     CALL MI5;   ///////////  E5  ////////////
+003D   2???           00098     CALL SIb4;  ///////////  Bb4 ////////////
+003E   2???           00099     CALL SOL4;  ///////////  G4  ////////////
+003F   2???           00100     CALL MI4;   ///////////  E4  ////////////
+                      00101 
+0040   2???           00102     CALL MIb5;  //////////   Eb5  ///////////
+0041   2???           00103     CALL SIb4;  ///////////  Bb4 ////////////
+0042   2???           00104     CALL SOL4;  ///////////  G4  ////////////
+0043   2???           00105     CALL MI4;   ///////////  E4  ////////////
+                      00106 
+0044   2???           00107     CALL MI5;   ///////////  E5  ////////////
+0045   2???           00108     CALL SIb4;  ///////////  Bb4 ////////////
+0046   2???           00109     CALL SOL4;  ///////////  G4  ////////////
+0047   2???           00110     CALL MI4;   ///////////  E4  ////////////
+                      00111 ;       ===================================================================
+                      00112 ;       ===================================================================
+0048   2???           00113     CALL MI5;   ///////////  E5  ////////////
+0049   2???           00114     CALL LA4;   ///////////  A4  ////////////
+004A   2???           00115     CALL FA4;   ///////////  F4  ////////////
+004B   2???           00116     CALL RE4;   ///////////  D4  ////////////
+                      00117 
+004C   2???           00118     CALL RE5;   ///////////  D5  ////////////
+004D   2???           00119     CALL LA4;   ///////////  A4  ////////////
+004E   2???           00120     CALL FA4;   ///////////  F4  ////////////
+004F   2???           00121     CALL RE4;   ///////////  D4  ////////////
+                      00122 
+0050   2???           00123     CALL REb5;  ///////////  Db5 ////////////
+0051   2???           00124     CALL LA4;   ///////////  A4  ////////////
+0052   2???           00125     CALL FA4;   ///////////  F4  ////////////
+0053   2???           00126     CALL RE4;   ///////////  D4  ////////////
+                      00127 
+0054   2???           00128     CALL RE5;   ///////////  D5  ////////////
+0055   2???           00129     CALL LA4;   ///////////  A4  ////////////
+0056   2???           00130     CALL FA4;   ///////////  F4  ////////////
+0057   2???           00131     CALL RE4;   ///////////  D4  ////////////
+                      00132 ;       ===================================================================
+                      00133 ;       ===================================================================
+0058   2???           00134     CALL Retardo_1ms
+0059   2???           00135     CALL LA5;    ///////////  A5  ////////////
+005A   2???           00136     CALL RE5;    ///////////  D5  ////////////
+005B   2???           00137     CALL SIb4;   ///////////  Bb4 ////////////
+005C   2???           00138     CALL SOL4;   ///////////  G4  ////////////
+                      00139 
+005D   2???           00140     CALL SOL5;   ///////////  G5  ////////////
+005E   2???           00141     CALL RE5;    ///////////  D5  ////////////
+005F   2???           00142     CALL SIb4;   ///////////  Bb4 ////////////
+0060   2???           00143     CALL SOL4;   ///////////  G4  ////////////
+                      00144 
+0061   2???           00145     CALL SOLb5;  ///////////  Gb5  ///////////
+0062   2???           00146     CALL RE5;    ///////////  D5  ////////////
+0063   2???           00147     CALL SIb4;   ///////////  Bb4 ////////////
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0064   2???           00148     CALL SOL4;   ///////////  G4  ////////////
+                      00149 
+0065   2???           00150     CALL SOL5;   ///////////  G5  ////////////
+0066   2???           00151     CALL RE5;    ///////////  D5  ////////////
+0067   2???           00152     CALL SIb4;   ///////////  Bb4 ////////////
+0068   2???           00153     CALL SOL4;   ///////////  G4  ////////////
+0069   2???           00154     CALL Retardo_1ms
+                      00155 ;       ===================================================================
+                      00156 ;       ==================================================================
+006A   2???           00157   GOTO FairyTheme
+006B                  00158 INTER
+006B   0090           00159     MOVWF SAVE_W
+006C   0E03           00160     SWAPF STATUS,0
+006D   0091           00161     MOVWF SAVE_STATUS
+                      00162 ;ZELDA SARIAS SONG
+                      00163 ;____________________________________________________
+006E   2???           00164     call Retardo_1s
+006F   2???           00165     CALL FA4_;   ///////////  F4  ////////////
+0070   2???           00166     CALL LA4_;   ///////////  A4  ////////////
+0071   2???           00167     CALL SI4_;   ///////////  B4  ////////////
+0072   2???           00168     call Retardo_20ms
+0073   2???           00169     CALL FA4_;   ///////////  F4  ////////////
+0074   2???           00170     CALL LA4_;   ///////////  A4  ////////////
+0075   2???           00171     CALL SI4_;   ///////////  B4  ////////////
+0076   2???           00172     call Retardo_20ms
+0077   2???           00173     CALL FA4_;   ///////////  F4  ////////////
+0078   2???           00174     CALL LA4_;   ///////////  A4  ////////////
+0079   2???           00175     CALL SI4_;   ///////////  B4  ////////////
+007A   2???           00176     call Retardo_20ms
+                      00177 
+007B   2???           00178     CALL MI5_;   ///////////  E5  ////////////
+007C   2???           00179     call Retardo_10ms
+007D   2???           00180     CALL RE5_;   ///////////  D5  ////////////
+007E   2???           00181     call Retardo_10ms
+007F   2???           00182     CALL SI4_;   ///////////  B4  ////////////
+0080   2???           00183     call Retardo_10ms
+0081   2???           00184     CALL DO5_;   ///////////  C5  ////////////
+0082   2???           00185     call Retardo_10ms
+0083   2???           00186     CALL SI4_;   ///////////  B4  ////////////
+0084   2???           00187     call Retardo_10ms
+0085   2???           00188     CALL SOL4_;  ///////////  G4  ////////////
+0086   2???           00189     call Retardo_10ms
+0087   2???           00190     CALL MI4_;   ///////////  E4  ////////////
+0088   2???           00191     call Retardo_50ms
+0089   2???           00192     CALL RE4_;   ///////////  D4  ////////////
+008A   2???           00193     call Retardo_10ms
+008B   2???           00194     CALL SOL4_;   ///////////  E4  ////////////
+008C   2???           00195     call Retardo_10ms
+008D   2???           00196     CALL SOL4_;  ///////////  G4  ////////////
+008E   2???           00197     call Retardo_10ms
+                      00198 ;    CALL MI4_;   ///////////  E4  //////////// SUENA MAL
+                      00199 ;    CALL MI4_;   ///////////  E4  ////////////
+008F   2???           00200     CALL SOL4_;  ///////////  G4  //////////// SUENA BIEN
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0090   2???           00201     CALL SOL4_;  ///////////  G4  ////////////
+0091   2???           00202     call Retardo_50ms
+                      00203 
+                      00204 
+0092   2???           00205     CALL FA4_;   ///////////  F4  ////////////
+0093   2???           00206     call Retardo_10ms
+0094   2???           00207     CALL LA4_;   ///////////  A4  ////////////
+0095   2???           00208     call Retardo_10ms
+0096   2???           00209     CALL SI4_;   ///////////  B4  ////////////
+0097   2???           00210     call Retardo_20ms
+                      00211 
+0098   2???           00212     CALL FA4_;   ///////////  F4  ////////////
+0099   2???           00213     call Retardo_10ms
+009A   2???           00214     CALL LA4_;   ///////////  A4  ////////////
+009B   2???           00215     call Retardo_10ms
+009C   2???           00216     CALL SI4_;   ///////////  B4  ////////////
+009D   2???           00217     call Retardo_20ms
+                      00218 
+009E   2???           00219     CALL FA4_;   ///////////  F4  ////////////
+009F   2???           00220     call Retardo_10ms
+00A0   2???           00221     CALL LA4_;   ///////////  A4  ////////////
+00A1   2???           00222     call Retardo_10ms
+00A2   2???           00223     CALL SI4_;   ///////////  B4  ////////////
+00A3   2???           00224     call Retardo_20ms
+                      00225 
+00A4   2???           00226     CALL MI5_;   ///////////  E5  ////////////
+00A5   2???           00227     call Retardo_10ms
+00A6   2???           00228     CALL RE5_;   ///////////  D5  ////////////
+00A7   2???           00229     call Retardo_10ms
+00A8   2???           00230     CALL SI4_;   ///////////  B4  ////////////
+00A9   2???           00231     call Retardo_10ms
+00AA   2???           00232     CALL DO5_;   ///////////  C5  ////////////
+00AB   2???           00233     call Retardo_10ms
+00AC   2???           00234     CALL MI5_;   ///////////  E5  ////////////
+00AD   2???           00235     call Retardo_10ms
+00AE   2???           00236     CALL SI4_;   ///////////  B4  ////////////
+00AF   2???           00237     call Retardo_10ms
+                      00238 
+00B0   2???           00239     CALL SOL4_;  ///////////  G4  //////////// SUENA BIEN
+00B1   2???           00240     CALL SOL4_;  ///////////  G4  ////////////
+                      00241 
+00B2   2???           00242     call Retardo_50ms
+00B3   2???           00243     CALL SI4_;   ///////////  B4  ////////////
+00B4   2???           00244     call Retardo_10ms
+00B5   2???           00245     CALL SOL4_;  ///////////  G4  ////////////
+00B6   2???           00246     call Retardo_10ms
+00B7   2???           00247     CALL RE4_;   ///////////  D4  ////////////
+00B8   2???           00248     call Retardo_10ms
+                      00249 ;    CALL MI4_;   ///////////  E4  //////////// SUENA MAL
+                      00250 ;    CALL MI4_;   ///////////  E4  ////////////
+00B9   2???           00251     call Retardo_50ms
+00BA   2???           00252     CALL RE4_;   ///////////  D4  ////////////
+00BB   2???           00253     call Retardo_10ms
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00254 ;    CALL MI4_;   ///////////  E4  ////////////
+00BC   2???           00255     call Retardo_10ms
+00BD   2???           00256     CALL FA4_;   ///////////  F4  ////////////
+00BE   2???           00257     call Retardo_10ms
+00BF   2???           00258     CALL SOL4_;  ///////////  G4  ////////////
+00C0   2???           00259     call Retardo_10ms
+00C1   2???           00260     CALL LA4_;   ///////////  A4  ////////////
+00C2   2???           00261     call Retardo_10ms
+00C3   2???           00262     CALL SI4_;   ///////////  B4  ////////////
+00C4   2???           00263     call Retardo_10ms
+00C5   2???           00264     CALL DO5_;   ///////////  C5  ////////////
+00C6   2???           00265     call Retardo_10ms
+00C7   2???           00266     CALL SI4_;   ///////////  B4  ////////////
+00C8   2???           00267     call Retardo_10ms
+00C9   2???           00268     CALL MI4_;   ///////////  E4  //////////// SUENA MAL
+                      00269 ;    CALL MI4_;   ///////////  E4  ////////////
+                      00270 ;    CALL MI4_;   ///////////  E4  ////////////
+                      00271 
+00CA   2???           00272     CALL RE4_;   ///////////  D4  ////////////
+00CB   2???           00273     call Retardo_10ms
+00CC   2???           00274     CALL MI4_;   ///////////  E4  ////////////
+00CD   2???           00275     call Retardo_10ms
+00CE   2???           00276     CALL FA4_;   ///////////  F4  ////////////
+00CF   2???           00277     call Retardo_10ms
+00D0   2???           00278     CALL SOL4_;  ///////////  G4  ////////////
+00D1   2???           00279     call Retardo_10ms
+00D2   2???           00280     CALL LA4_;   ///////////  A4  ////////////
+00D3   2???           00281     call Retardo_10ms
+00D4   2???           00282     CALL SI4_;   ///////////  B4  ////////////
+00D5   2???           00283     call Retardo_10ms
+00D6   2???           00284     CALL DO5_;   ///////////  C5  ////////////
+00D7   2???           00285     call Retardo_10ms
+00D8   2???           00286     CALL RE5_;   ///////////  D5  ////////////
+00D9   2???           00287     call Retardo_10ms
+00DA   2???           00288     CALL MI5_;   ///////////  E5  ////////////
+00DB   2???           00289     CALL MI5_;   ///////////  E5  ////////////
+00DC   2???           00290     call Retardo_50ms
+                      00291 
+00DD   2???           00292     CALL MI4_;   ///////////  E4  ////////////
+                      00293 
+00DE   2???           00294     CALL FA4_;   ///////////  F4  ////////////
+                      00295 
+00DF   2???           00296     CALL MI4_;   ///////////  E4  ////////////
+                      00297 
+00E0   2???           00298     CALL RE4_;   ///////////  D4  ////////////
+00E1   2???           00299     CALL RE4_;   ///////////  D4  ////////////
+00E2   2???           00300     call Retardo_50ms
+                      00301 
+00E3                  00302 FIN_INTER
+00E3   0E11           00303     SWAPF SAVE_STATUS,0
+00E4   0083           00304     MOVWF STATUS
+00E5   0E90           00305     SWAPF SAVE_W,1
+00E6   0E10           00306     SWAPF SAVE_W,0
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00E7   108B           00307     BCF INTCON,INTF
+00E8   0009           00308     RETFIE
+                      00309 
+                      00310   
+                      00311     INCLUDE <RETARDOS_NOTAS.INC>
+                      00001 ;**************************** Librería "RETARDOS_NOTAS.INC" *********************************
+                      00002 ;
+                      00003 ;       ===================================================================
+                      00004 ;   NOTAS Y RETARDOS PARA MUSICA
+                      00005 ;       JESUS EDUARDO LOPEZ RODRIGUEZ
+                      00006 ;       ===================================================================
+                      00007 
+                      00008 ; ZONA DE DATOS *********************************************************************
+                      00009 
+                      00010         CBLOCK
+                      00011         ;R_ContA                                                ; Contadores para los retardos.
+                      00012         ;R_ContB
+                      00013         ;R_ContC
+                      00014         ENDC
+                      00015 
+00E9                  00016 D4;RE en 4 octava
+00E9   1486           00017     BSF  PORTB, 1
+00EA   2???           00018     CALL Retardo_500micros
+00EB   2???           00019     CALL Retardo_200micros
+00EC   2???           00020     CALL Retardo_100micros
+00ED   2???           00021     CALL Retardo_20micros
+00EE   2???           00022     CALL Retardo_20micros
+00EF   2???           00023     CALL Retardo_5micros
+00F0   2???           00024     CALL Retardo_5micros
+00F1   1086           00025     BCF PORTB, 1
+00F2   2???           00026     CALL Retardo_500micros
+00F3   2???           00027     CALL Retardo_200micros
+00F4   2???           00028     CALL Retardo_100micros
+00F5   2???           00029     CALL Retardo_20micros
+00F6   2???           00030     CALL Retardo_20micros
+00F7   2???           00031     CALL Retardo_5micros
+00F8   2???           00032     CALL Retardo_5micros
+00F9   0B8C           00033     decfsz C_Tempo, f
+00FA   2???           00034     GOTO D4
+00FB   0008           00035     return
+                      00036 
+00FC                  00037 E4;MI en 4 octava
+00FC   1486           00038     BSF  PORTB, 1
+00FD   2???           00039     CALL Retardo_500micros
+00FE   2???           00040     CALL Retardo_200micros
+00FF   2???           00041     CALL Retardo_20micros
+0100   2???           00042     CALL Retardo_20micros
+0101   2???           00043     CALL Retardo_5micros
+0102   2???           00044     CALL Retardo_5micros
+0103   1086           00045     BCF PORTB, 1
+0104   2???           00046     CALL Retardo_500micros
+0105   2???           00047     CALL Retardo_200micros
+0106   2???           00048     CALL Retardo_100micros
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE  8
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0107   2???           00049     CALL Retardo_20micros
+0108   2???           00050     CALL Retardo_20micros
+0109   2???           00051     CALL Retardo_5micros
+010A   2???           00052     CALL Retardo_5micros
+010B   0B8C           00053     decfsz C_Tempo, f
+010C   2???           00054     GOTO E4
+010D   0008           00055     return
+                      00056 
+010E                  00057 G4;SOL en 4 octava 637us
+010E   1486           00058     BSF  PORTB, 1
+010F   2???           00059     CALL Retardo_500micros
+0110   2???           00060     CALL Retardo_100micros
+0111   2???           00061     CALL Retardo_20micros
+0112   2???           00062     CALL Retardo_5micros
+0113   2???           00063     CALL Retardo_5micros
+0114   2???           00064     CALL Retardo_5micros
+0115   1086           00065     BCF PORTB, 1
+0116   2???           00066     CALL Retardo_500micros
+0117   2???           00067     CALL Retardo_100micros
+0118   2???           00068     CALL Retardo_20micros
+0119   2???           00069     CALL Retardo_5micros
+011A   2???           00070     CALL Retardo_5micros
+011B   2???           00071     CALL Retardo_5micros
+011C   0B8C           00072     decfsz C_Tempo, f
+011D   2???           00073     GOTO G4
+011E   0008           00074     return
+                      00075 
+011F                  00076 G5;SOL en 5 octava 318us
+011F   1486           00077     BSF  PORTB, 1
+0120   2???           00078     CALL Retardo_200micros
+0121   2???           00079     CALL Retardo_100micros
+0122   2???           00080     CALL Retardo_5micros
+0123   2???           00081     CALL Retardo_5micros
+0124   2???           00082     CALL Retardo_5micros
+0125   1086           00083     BCF PORTB, 1
+0126   2???           00084     CALL Retardo_200micros
+0127   2???           00085     CALL Retardo_100micros
+0128   2???           00086     CALL Retardo_5micros
+0129   2???           00087     CALL Retardo_5micros
+012A   2???           00088     CALL Retardo_5micros
+012B   0B8C           00089     decfsz C_Tempo, f
+012C   2???           00090     GOTO G5
+012D   0008           00091     return
+                      00092 
+012E                  00093 Gb5;SOL# en 5 octava 300us
+012E   1486           00094     BSF  PORTB, 1
+012F   2???           00095     CALL Retardo_200micros
+0130   2???           00096     CALL Retardo_100micros
+0131   1086           00097     BCF PORTB, 1
+0132   2???           00098     CALL Retardo_200micros
+0133   2???           00099     CALL Retardo_100micros
+0134   0B8C           00100     decfsz C_Tempo, f
+0135   2???           00101     GOTO Gb5
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0136   0008           00102     return
+                      00103 
+0137                  00104 Bb4;SI# en 4 octava 470us
+0137   1486           00105     BSF  PORTB, 1
+0138   2???           00106     CALL Retardo_200micros
+0139   2???           00107     CALL Retardo_200micros
+013A   2???           00108     CALL Retardo_50micros
+013B   2???           00109     CALL Retardo_20micros
+013C   1086           00110     BCF PORTB, 1
+013D   2???           00111     CALL Retardo_200micros
+013E   2???           00112     CALL Retardo_200micros
+013F   2???           00113     CALL Retardo_50micros
+0140   2???           00114     CALL Retardo_20micros
+0141   0B8C           00115     decfsz C_Tempo, f
+0142   2???           00116     GOTO Bb4
+0143   0008           00117     return
+                      00118 
+0144                  00119 Bb5;SI# en 5 octava 235us
+0144   1486           00120     BSF  PORTB, 1
+0145   2???           00121     CALL Retardo_200micros
+0146   2???           00122     CALL Retardo_20micros
+0147   2???           00123     CALL Retardo_10micros
+0148   2???           00124     CALL Retardo_5micros
+0149   1086           00125     BCF PORTB, 1
+014A   2???           00126     CALL Retardo_200micros
+014B   2???           00127     CALL Retardo_20micros
+014C   2???           00128     CALL Retardo_10micros
+014D   2???           00129     CALL Retardo_5micros
+014E   0B8C           00130     decfsz C_Tempo, f
+014F   2???           00131     GOTO Bb5
+0150   0008           00132     return
+                      00133 
+0151                  00134 D5;RE en 5 octava 425us
+0151   1486           00135     BSF  PORTB, 1
+0152   2???           00136     CALL Retardo_200micros
+0153   2???           00137     CALL Retardo_200micros
+0154   2???           00138     CALL Retardo_20micros
+0155   2???           00139     CALL Retardo_5micros
+0156   1086           00140     BCF PORTB, 1
+0157   2???           00141     CALL Retardo_200micros
+0158   2???           00142     CALL Retardo_200micros
+0159   2???           00143     CALL Retardo_20micros
+015A   2???           00144     CALL Retardo_5micros
+015B   0B8C           00145     decfsz C_Tempo, f
+015C   2???           00146     GOTO D5
+015D   0008           00147     return
+                      00148 
+015E                  00149 E5;MI en 5 octava 379us
+015E   1486           00150     BSF  PORTB, 1
+015F   2???           00151     CALL Retardo_200micros
+0160   2???           00152     CALL Retardo_100micros
+0161   2???           00153     CALL Retardo_50micros
+0162   2???           00154     CALL Retardo_20micros
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 10
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0163   2???           00155     CALL Retardo_5micros
+0164   1086           00156     BCF PORTB, 1
+0165   2???           00157     CALL Retardo_200micros
+0166   2???           00158     CALL Retardo_100micros
+0167   2???           00159     CALL Retardo_50micros
+0168   2???           00160     CALL Retardo_20micros
+0169   2???           00161     CALL Retardo_5micros
+016A   0B8C           00162     decfsz C_Tempo, f
+016B   2???           00163     GOTO E5
+016C   0008           00164     return
+                      00165 
+016D                  00166 A4;LA en 4 octava 568us
+016D   1486           00167     BSF  PORTB, 1
+016E   2???           00168     CALL Retardo_500micros
+016F   2???           00169     CALL Retardo_50micros
+0170   2???           00170     CALL Retardo_5micros
+0171   2???           00171     CALL Retardo_5micros
+0172   2???           00172     CALL Retardo_5micros
+0173   1086           00173     BCF PORTB, 1
+0174   2???           00174     CALL Retardo_500micros
+0175   2???           00175     CALL Retardo_50micros
+0176   2???           00176     CALL Retardo_5micros
+0177   2???           00177     CALL Retardo_5micros
+0178   2???           00178     CALL Retardo_5micros
+0179   0B8C           00179     decfsz C_Tempo, f
+017A   2???           00180     GOTO A4
+017B   0008           00181     return
+                      00182 
+                      00183 
+017C                  00184 A5;LA en 5 octava 284us
+017C   1486           00185     BSF  PORTB, 1
+017D   2???           00186     CALL Retardo_200micros
+017E   2???           00187     CALL Retardo_50micros
+017F   2???           00188     CALL Retardo_20micros
+0180   2???           00189     CALL Retardo_5micros
+0181   2???           00190     CALL Retardo_5micros
+0182   1086           00191     BCF PORTB, 1
+0183   2???           00192     CALL Retardo_200micros
+0184   2???           00193     CALL Retardo_50micros
+0185   2???           00194     CALL Retardo_20micros
+0186   2???           00195     CALL Retardo_5micros
+0187   2???           00196     CALL Retardo_5micros
+0188   0B8C           00197     decfsz C_Tempo, f
+0189   2???           00198     GOTO A5
+018A   0008           00199     return
+                      00200 
+018B                  00201 Ab5;LA# en 5 octava 268us
+018B   1486           00202     BSF  PORTB, 1
+018C   2???           00203     CALL Retardo_200micros
+018D   2???           00204     CALL Retardo_50micros
+018E   2???           00205     CALL Retardo_10micros
+018F   2???           00206     CALL Retardo_5micros
+0190   1086           00207     BCF PORTB, 1
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 11
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0191   2???           00208     CALL Retardo_200micros
+0192   2???           00209     CALL Retardo_50micros
+0193   2???           00210     CALL Retardo_10micros
+0194   2???           00211     CALL Retardo_5micros
+0195   0B8C           00212     decfsz C_Tempo, f
+0196   2???           00213     GOTO Ab5
+0197   0008           00214     return
+                      00215 
+0198                  00216 F4;FA en 4 octava 715us
+0198   1486           00217     BSF  PORTB, 1
+0199   2???           00218     CALL Retardo_500micros
+019A   2???           00219     CALL Retardo_200micros
+019B   2???           00220     CALL Retardo_5micros
+019C   2???           00221     CALL Retardo_5micros
+019D   2???           00222     CALL Retardo_5micros
+019E   1086           00223     BCF PORTB, 1
+019F   2???           00224     CALL Retardo_500micros
+01A0   2???           00225     CALL Retardo_200micros
+01A1   2???           00226     CALL Retardo_5micros
+01A2   2???           00227     CALL Retardo_5micros
+01A3   2???           00228     CALL Retardo_5micros
+01A4   0B8C           00229     decfsz C_Tempo, f
+01A5   2???           00230     GOTO F4
+01A6   0008           00231     return
+                      00232 
+01A7                  00233 F5;FA en 5 octava 357us
+01A7   1486           00234     BSF  PORTB, 1
+01A8   2???           00235     CALL Retardo_200micros
+01A9   2???           00236     CALL Retardo_100micros
+01AA   2???           00237     CALL Retardo_50micros
+01AB   2???           00238     CALL Retardo_5micros
+01AC   1086           00239     BCF PORTB, 1
+01AD   2???           00240     CALL Retardo_200micros
+01AE   2???           00241     CALL Retardo_100micros
+01AF   2???           00242     CALL Retardo_50micros
+01B0   2???           00243     CALL Retardo_5micros
+01B1   0B8C           00244     decfsz C_Tempo, f
+01B2   2???           00245     GOTO F5
+01B3   0008           00246     return
+                      00247 
+01B4                  00248 F6;FA en 6 octava 178us
+01B4   1486           00249     BSF  PORTB, 1
+01B5   2???           00250     CALL Retardo_100micros
+01B6   2???           00251     CALL Retardo_50micros
+01B7   2???           00252     CALL Retardo_20micros
+01B8   2???           00253     CALL Retardo_4micros
+01B9   2???           00254     CALL Retardo_4micros
+01BA   1086           00255     BCF PORTB, 1
+01BB   2???           00256     CALL Retardo_100micros
+01BC   2???           00257     CALL Retardo_50micros
+01BD   2???           00258     CALL Retardo_20micros
+01BE   2???           00259     CALL Retardo_4micros
+01BF   2???           00260     CALL Retardo_4micros
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 12
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+01C0   0B8C           00261     decfsz C_Tempo, f
+01C1   2???           00262     GOTO F6
+01C2   0008           00263     return
+                      00264 
+01C3                  00265 Db4;RE# en 4 octava 803us
+01C3   1486           00266     BSF  PORTB, 1
+01C4   2???           00267     CALL Retardo_200micros
+01C5   2???           00268     CALL Retardo_200micros
+01C6   2???           00269     CALL Retardo_200micros
+01C7   2???           00270     CALL Retardo_200micros
+01C8   1086           00271     BCF PORTB, 1
+01C9   2???           00272     CALL Retardo_200micros
+01CA   2???           00273     CALL Retardo_200micros
+01CB   2???           00274     CALL Retardo_200micros
+01CC   2???           00275     CALL Retardo_200micros
+01CD   0B8C           00276     decfsz C_Tempo, f
+01CE   2???           00277     GOTO Db5
+01CF   0008           00278     return
+                      00279 
+01D0                  00280 Db5;RE# en 5 octava 401us
+01D0   1486           00281     BSF  PORTB, 1
+01D1   2???           00282     CALL Retardo_200micros
+01D2   2???           00283     CALL Retardo_200micros
+01D3   1086           00284     BCF PORTB, 1
+01D4   2???           00285     CALL Retardo_200micros
+01D5   2???           00286     CALL Retardo_200micros
+01D6   0B8C           00287     decfsz C_Tempo, f
+01D7   2???           00288     GOTO Db5
+01D8   0008           00289     return
+                      00290 
+01D9                  00291 Eb5;MI# en 5 octava 379us
+01D9   1486           00292     BSF  PORTB, 1
+01DA   2???           00293     CALL Retardo_200micros
+01DB   2???           00294     CALL Retardo_100micros
+01DC   2???           00295     CALL Retardo_50micros
+01DD   2???           00296     CALL Retardo_20micros
+01DE   2???           00297     CALL Retardo_5micros
+01DF   1086           00298     BCF PORTB, 1
+01E0   2???           00299     CALL Retardo_200micros
+01E1   2???           00300     CALL Retardo_100micros
+01E2   2???           00301     CALL Retardo_50micros
+01E3   2???           00302     CALL Retardo_20micros
+01E4   2???           00303     CALL Retardo_5micros
+01E5   0B8C           00304     decfsz C_Tempo, f
+01E6   2???           00305     GOTO Eb5
+01E7   0008           00306     return
+                      00307 
+01E8                  00308 Gb4;SOL# en 4 octava 601us
+01E8   1486           00309     BSF  PORTB, 1
+01E9   2???           00310     CALL Retardo_200micros
+01EA   2???           00311     CALL Retardo_100micros
+01EB   1086           00312     BCF PORTB, 1
+01EC   2???           00313     CALL Retardo_200micros
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 13
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+01ED   2???           00314     CALL Retardo_100micros
+01EE   0B8C           00315     decfsz C_Tempo, f
+01EF   2???           00316     GOTO Eb5
+01F0   0008           00317     return
+                      00318 
+01F1                  00319 C5;DO en 5 octava 477us
+01F1   1486           00320     BSF  PORTB, 1
+01F2   2???           00321     CALL Retardo_200micros
+01F3   2???           00322     CALL Retardo_200micros
+01F4   2???           00323     CALL Retardo_50micros
+01F5   2???           00324     CALL Retardo_20micros
+01F6   2???           00325     CALL Retardo_5micros
+01F7   1086           00326     BCF PORTB, 1
+01F8   2???           00327     CALL Retardo_200micros
+01F9   2???           00328     CALL Retardo_200micros
+01FA   2???           00329     CALL Retardo_50micros
+01FB   2???           00330     CALL Retardo_20micros
+01FC   2???           00331     CALL Retardo_5micros
+01FD   0B8C           00332     decfsz C_Tempo, f
+01FE   2???           00333     GOTO C5
+01FF   0008           00334     return
+                      00335 
+0200                  00336 C6;DO en 6 octava 238.89us
+0200   1486           00337     BSF  PORTB, 1
+0201   2???           00338     CALL Retardo_200micros
+0202   2???           00339     CALL Retardo_20micros
+0203   2???           00340     CALL Retardo_10micros
+0204   2???           00341     CALL Retardo_5micros
+0205   2???           00342     CALL Retardo_4micros
+0206   1086           00343     BCF PORTB, 1
+0207   2???           00344     CALL Retardo_200micros
+0208   2???           00345     CALL Retardo_20micros
+0209   2???           00346     CALL Retardo_10micros
+020A   2???           00347     CALL Retardo_5micros
+020B   2???           00348     CALL Retardo_4micros
+020C   0B8C           00349     decfsz C_Tempo, f
+020D   2???           00350     GOTO C6
+020E   0008           00351     return
+                      00352 
+020F                  00353 B4;SI en 4 octava 506us
+020F   1486           00354     BSF  PORTB, 1
+0210   2???           00355     CALL Retardo_200micros
+0211   2???           00356     CALL Retardo_200micros
+0212   2???           00357     CALL Retardo_50micros
+0213   2???           00358     CALL Retardo_20micros
+0214   2???           00359     CALL Retardo_20micros
+0215   2???           00360     CALL Retardo_4micros
+0216   2???           00361     CALL Retardo_4micros
+0217   2???           00362     CALL Retardo_4micros
+0218   2???           00363     CALL Retardo_4micros
+0219   1086           00364     BCF PORTB, 1
+021A   2???           00365     CALL Retardo_200micros
+021B   2???           00366     CALL Retardo_200micros
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 14
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+021C   2???           00367     CALL Retardo_50micros
+021D   2???           00368     CALL Retardo_20micros
+021E   2???           00369     CALL Retardo_20micros
+021F   2???           00370     CALL Retardo_4micros
+0220   2???           00371     CALL Retardo_4micros
+0221   2???           00372     CALL Retardo_4micros
+0222   2???           00373     CALL Retardo_4micros
+0223   0B8C           00374     decfsz C_Tempo, f
+0224   2???           00375     GOTO B4
+0225   0008           00376     return
+                      00377 
+                      00378 
+                      00379 
+                      00380 
+0226                  00381 Retardo_10micros        ; La llamada "CALL" aporta 2 ciclos máquina.
+0226   0000           00382         nop                             ; Aporta 1 ciclo máquina.
+0227   0000           00383         nop                             ; Aporta 1 ciclo máquina.
+0228   0000           00384         nop                             ; Aporta 1 ciclo máquina.
+0229   0000           00385         nop                             ; Aporta 1 ciclo máquina.
+022A   0000           00386         nop                             ; Aporta 1 ciclo máquina.
+022B                  00387 Retardo_5micros                 ; La llamada "CALL" aporta 2 ciclos máquina.
+022B   0000           00388         nop                             ; Aporta 1 ciclo máquina.
+022C                  00389 Retardo_4micros                 ; La llamada "CALL" aporta 2 ciclos máquina.
+022C   0008           00390         return                          ; El salto del retorno aporta 2 ciclos máquina.
+                      00391 ;
+                      00392 ; RETARDOS de 20 hasta 500 microsegundos ------------------------------------------------
+                      00393 ;
+022D                  00394 Retardo_500micros                       ; La llamada "CALL" aporta 2 ciclos máquina.
+022D   0000           00395         nop                             ; Aporta 1 ciclo máquina.
+022E   30A4           00396         MOVLW   D'164'          ; Aporta 1 ciclo máquina. Este es el valor de "K".
+022F   2???           00397         GOTO    RetardoMicros           ; Aporta 2 ciclos máquina.
+0230                  00398 Retardo_200micros                               ; La llamada "CALL" aporta 2 ciclos máquina.
+0230   0000           00399         nop                             ; Aporta 1 ciclo máquina.
+0231   3040           00400         MOVLW   D'64'           ; Aporta 1 ciclo máquina. Este es el valor de "K".
+0232   2???           00401         GOTO    RetardoMicros           ; Aporta 2 ciclos máquina.
+0233                  00402 Retardo_100micros                               ; La llamada "CALL" aporta 2 ciclos máquina.
+0233   301F           00403         MOVLW   D'31'   ; Aporta 1 ciclo máquina. Este es el valor de "K".
+0234   2???           00404         GOTO    RetardoMicros           ; Aporta 2 ciclos máquina.
+0235                  00405 Retardo_50micros                                ; La llamada "CALL" aporta 2 ciclos máquina.
+0235   0000           00406         nop                             ; Aporta 1 ciclo máquina.
+0236   300E           00407         MOVLW   D'14'                   ; Aporta 1 ciclo máquina. Este es el valor de "K".
+0237   2???           00408         GOTO    RetardoMicros           ; Aporta 2 ciclos máquina.
+0238                  00409 Retardo_20micros                                ; La llamada "CALL" aporta 2 ciclos máquina.
+0238   3005           00410         MOVLW   D'5'                    ; Aporta 1 ciclo máquina. Este es el valor de "K".
+                      00411 ;
+                      00412 ; El próximo bloque "RetardoMicros" tarda:
+                      00413 ; 1 + (K-1) + 2 + (K-1)x2 + 2 = (2 + 3K) ciclos máquina.
+                      00414 ;
+0239                  00415 RetardoMicros
+0239   008D           00416         MOVWF   R_ContA                 ; Aporta 1 ciclo máquina.
+023A                  00417 Rmicros_Bucle
+023A   0B8D           00418         decfsz  R_ContA,F               ; (K-1)x1 cm (cuando no salta) + 2 cm (al saltar).
+023B   2???           00419         GOTO    Rmicros_Bucle           ; Aporta (K-1)x2 ciclos máquina.
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 15
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+023C   0008           00420         return                          ; El salto del retorno aporta 2 ciclos máquina.
+                      00421 ;
+                      00422 ;En total estas subrutinas tardan:
+                      00423 ; - Retardo_500micros:  2 + 1 + 1 + 2 + (2 + 3K) = 500 cm = 500 µs. (para K=164 y 4 MHz).
+                      00424 ; - Retardo_200micros:  2 + 1 + 1 + 2 + (2 + 3K) = 200 cm = 200 µs. (para K= 64 y 4 MHz).
+                      00425 ; - Retardo_100micros:  2     + 1 + 2 + (2 + 3K) = 100 cm = 100 µs. (para K= 31 y 4 MHz).
+                      00426 ; - Retardo_50micros :  2 + 1 + 1 + 2 + (2 + 3K) =  50 cm =  50 µs. (para K= 14 y 4 MHz).
+                      00427 ; - Retardo_20micros :  2     + 1     + (2 + 3K) =  20 cm =  20 µs. (para K=  5 y 4 MHz).
+                      00428 ;
+                      00429 ; RETARDOS de 1 ms hasta 200 ms. --------------------------------------------------------
+                      00430 ;
+023D                  00431 Retardo_200ms                   ; La llamada "CALL" aporta 2 ciclos máquina.
+023D   30C8           00432         MOVLW   D'200'                  ; Aporta 1 ciclo máquina. Este es el valor de "M".
+023E   2???           00433         GOTO    Retardos_ms             ; Aporta 2 ciclos máquina.
+023F                  00434 Retardo_100ms                           ; La llamada "CALL" aporta 2 ciclos máquina.
+023F   3064           00435         MOVLW   D'100'                  ; Aporta 1 ciclo máquina. Este es el valor de "M".
+0240   2???           00436         GOTO    Retardos_ms             ; Aporta 2 ciclos máquina.
+0241                  00437 Retardo_50ms                            ; La llamada "CALL" aporta 2 ciclos máquina.
+0241   3032           00438         MOVLW   D'50'                   ; Aporta 1 ciclo máquina. Este es el valor de "M".
+0242   2???           00439         GOTO    Retardos_ms             ; Aporta 2 ciclos máquina.
+0243                  00440 Retardo_20ms                            ; La llamada "CALL" aporta 2 ciclos máquina.
+0243   3014           00441         MOVLW   D'20'                   ; Aporta 1 ciclo máquina. Este es el valor de "M".
+0244   2???           00442         GOTO    Retardos_ms             ; Aporta 2 ciclos máquina.
+0245                  00443 Retardo_10ms            ; La llamada "CALL" aporta 2 ciclos máquina.
+0245   300A           00444         MOVLW   D'10'                   ; Aporta 1 ciclo máquina. Este es el valor de "M".
+0246   2???           00445         GOTO    Retardos_ms             ; Aporta 2 ciclos máquina.
+0247                  00446 Retardo_5ms                     ; La llamada "CALL" aporta 2 ciclos máquina.
+0247   3005           00447         MOVLW   D'5'                    ; Aporta 1 ciclo máquina. Este es el valor de "M".
+0248   2???           00448         GOTO    Retardos_ms             ; Aporta 2 ciclos máquina.
+0249                  00449 Retardo_2ms                     ; La llamada "CALL" aporta 2 ciclos máquina.
+0249   3002           00450         MOVLW   D'2'                    ; Aporta 1 ciclo máquina. Este es el valor de "M".
+024A   2???           00451         GOTO    Retardos_ms             ; Aporta 2 ciclos máquina.
+024B                  00452 Retardo_1ms             ; La llamada "CALL" aporta 2 ciclos máquina.
+024B   3001           00453         MOVLW   D'1'                    ; Aporta 1 ciclo máquina. Este es el valor de "M".
+                      00454 ;
+                      00455 ; El próximo bloque "Retardos_ms" tarda:
+                      00456 ; 1 + M + M + KxM + (K-1)xM + Mx2 + (K-1)Mx2 + (M-1) + 2 + (M-1)x2 + 2 =
+                      00457 ; = (2 + 4M + 4KM) ciclos máquina. Para K=249 y M=1 supone 1002 ciclos máquina
+                      00458 ; que a 4 MHz son 1002 µs = 1 ms.
+                      00459 ;
+024C                  00460 Retardos_ms
+024C   008E           00461         MOVWF   R_ContB                 ; Aporta 1 ciclo máquina.
+024D                  00462 R1ms_BucleExterno
+024D   30F9           00463         MOVLW   D'249'                  ; Aporta Mx1 ciclos máquina. Este es el valor de "K".
+024E   008D           00464         MOVWF   R_ContA                 ; Aporta Mx1 ciclos máquina.
+024F                  00465 R1ms_BucleInterno
+024F   0000           00466         nop                             ; Aporta KxMx1 ciclos máquina.
+0250   0B8D           00467         decfsz  R_ContA,F               ; (K-1)xMx1 cm (cuando no salta) + Mx2 cm (al saltar).
+0251   2???           00468         GOTO    R1ms_BucleInterno               ; Aporta (K-1)xMx2 ciclos máquina.
+0252   0B8E           00469         decfsz  R_ContB,F               ; (M-1)x1 cm (cuando no salta) + 2 cm (al saltar).
+0253   2???           00470         GOTO    R1ms_BucleExterno       ; Aporta (M-1)x2 ciclos máquina.
+0254   0008           00471         return                          ; El salto del retorno aporta 2 ciclos máquina.
+                      00472 ;
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 16
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00473 ;En total estas subrutinas tardan:
+                      00474 ; - Retardo_200ms:      2 + 1 + 2 + (2 + 4M + 4KM) = 200007 cm = 200 ms. (M=200 y K=249).
+                      00475 ; - Retardo_100ms:      2 + 1 + 2 + (2 + 4M + 4KM) = 100007 cm = 100 ms. (M=100 y K=249).
+                      00476 ; - Retardo_50ms :      2 + 1 + 2 + (2 + 4M + 4KM) =  50007 cm =  50 ms. (M= 50 y K=249).
+                      00477 ; - Retardo_20ms :      2 + 1 + 2 + (2 + 4M + 4KM) =  20007 cm =  20 ms. (M= 20 y K=249).
+                      00478 ; - Retardo_10ms :      2 + 1 + 2 + (2 + 4M + 4KM) =  10007 cm =  10 ms. (M= 10 y K=249).
+                      00479 ; - Retardo_5ms  :      2 + 1 + 2 + (2 + 4M + 4KM) =   5007 cm =   5 ms. (M=  5 y K=249).
+                      00480 ; - Retardo_2ms  :      2 + 1 + 2 + (2 + 4M + 4KM) =   2007 cm =   2 ms. (M=  2 y K=249).
+                      00481 ; - Retardo_1ms  :      2 + 1     + (2 + 4M + 4KM) =   1005 cm =   1 ms. (M=  1 y K=249).
+                      00482 ;
+                      00483 ; RETARDOS de 0.5 hasta 20 segundos ---------------------------------------------------
+                      00484 ;
+0255                  00485 Retardo_20s                             ; La llamada "CALL" aporta 2 ciclos máquina.
+0255   30C8           00486         MOVLW   D'200'                  ; Aporta 1 ciclo máquina. Este es el valor de "N".
+0256   2???           00487         GOTO    Retardo_1Decima         ; Aporta 2 ciclos máquina.
+0257                  00488 Retardo_10s                             ; La llamada "CALL" aporta 2 ciclos máquina.
+0257   3064           00489         MOVLW   D'100'                  ; Aporta 1 ciclo máquina. Este es el valor de "N".
+0258   2???           00490         GOTO    Retardo_1Decima         ; Aporta 2 ciclos máquina.
+0259                  00491 Retardo_5s                              ; La llamada "CALL" aporta 2 ciclos máquina.
+0259   3032           00492         MOVLW   D'50'                   ; Aporta 1 ciclo máquina. Este es el valor de "N".
+025A   2???           00493         GOTO    Retardo_1Decima         ; Aporta 2 ciclos máquina.
+025B                  00494 Retardo_2s                              ; La llamada "CALL" aporta 2 ciclos máquina.
+025B   3014           00495         MOVLW   D'20'                   ; Aporta 1 ciclo máquina. Este es el valor de "N".
+025C   2???           00496         GOTO    Retardo_1Decima         ; Aporta 2 ciclos máquina.
+025D                  00497 Retardo_1s                              ; La llamada "CALL" aporta 2 ciclos máquina.
+025D   300A           00498         MOVLW   D'10'                   ; Aporta 1 ciclo máquina. Este es el valor de "N".
+025E   2???           00499         GOTO    Retardo_1Decima         ; Aporta 2 ciclos máquina.
+025F                  00500 Retardo_500ms                           ; La llamada "CALL" aporta 2 ciclos máquina.
+025F   3005           00501         MOVLW   D'5'                    ; Aporta 1 ciclo máquina. Este es el valor de "N".
+                      00502 ;
+                      00503 ; El próximo bloque "Retardo_1Decima" tarda:
+                      00504 ; 1 + N + N + MxN + MxN + KxMxN + (K-1)xMxN + MxNx2 + (K-1)xMxNx2 +
+                      00505 ;   + (M-1)xN + Nx2 + (M-1)xNx2 + (N-1) + 2 + (N-1)x2 + 2 =
+                      00506 ; = (2 + 4M + 4MN + 4KM) ciclos máquina. Para K=249, M=100 y N=1 supone 100011
+                      00507 ; ciclos máquina que a 4 MHz son 100011 µs = 100 ms = 0,1 s = 1 décima de segundo.
+                      00508 ;
+0260                  00509 Retardo_1Decima
+0260   008F           00510         MOVWF   R_ContC                 ; Aporta 1 ciclo máquina.
+0261                  00511 R1Decima_BucleExterno2
+0261   3064           00512         MOVLW   D'100'                  ; Aporta Nx1 ciclos máquina. Este es el valor de "M".
+0262   008E           00513         MOVWF   R_ContB                 ; Aporta Nx1 ciclos máquina.
+0263                  00514 R1Decima_BucleExterno
+0263   30F9           00515         MOVLW   D'249'                  ; Aporta MxNx1 ciclos máquina. Este es el valor de "K".
+0264   008D           00516         MOVWF   R_ContA                 ; Aporta MxNx1 ciclos máquina.
+0265                  00517 R1Decima_BucleInterno
+0265   0000           00518         nop                             ; Aporta KxMxNx1 ciclos máquina.
+0266   0B8D           00519         decfsz  R_ContA,F               ; (K-1)xMxNx1 cm (si no salta) + MxNx2 cm (al saltar).
+0267   2???           00520         GOTO    R1Decima_BucleInterno   ; Aporta (K-1)xMxNx2 ciclos máquina.
+0268   0B8E           00521         decfsz  R_ContB,F               ; (M-1)xNx1 cm (cuando no salta) + Nx2 cm (al saltar).
+0269   2???           00522         GOTO    R1Decima_BucleExterno   ; Aporta (M-1)xNx2 ciclos máquina.
+026A   0B8F           00523         decfsz  R_ContC,F               ; (N-1)x1 cm (cuando no salta) + 2 cm (al saltar).
+026B   2???           00524         GOTO    R1Decima_BucleExterno2  ; Aporta (N-1)x2 ciclos máquina.
+026C   0008           00525         return                          ; El salto del retorno aporta 2 ciclos máquina.
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 17
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00526 
+                      00527 ;En total estas subrutinas tardan:
+                      00528 ; - Retardo_20s:        2 + 1 + 2 + (2 + 4N + 4MN + 4KMN) = 20000807 cm = 20 s.
+                      00529 ;                       (N=200, M=100 y K=249).
+                      00530 ; - Retardo_10s:        2 + 1 + 2 + (2 + 4N + 4MN + 4KMN) = 10000407 cm = 10 s.
+                      00531 ;                       (N=100, M=100 y K=249).
+                      00532 ; - Retardo_5s:         2 + 1 + 2 + (2 + 4N + 4MN + 4KMN) =  5000207 cm =  5 s.
+                      00533 ;                       (N= 50, M=100 y K=249).
+                      00534 ; - Retardo_2s:         2 + 1 + 2 + (2 + 4N + 4MN + 4KMN) =  2000087 cm =  2 s.
+                      00535 ;                       (N= 20, M=100 y K=249).
+                      00536 ; - Retardo_1s:         2 + 1 + 2 + (2 + 4N + 4MN + 4KMN) =  1000047 cm =  1 s.
+                      00537 ;                       (N= 10, M=100 y K=249).
+                      00538 ; - Retardo_500ms:      2 + 1     + (2 + 4N + 4MN + 4KMN) =   500025 cm = 0,5 s.
+                      00539 ;                       (N=  5, M=100 y K=249).
+                      00540 
+                      00541 
+                      00542 
+                      00543 
+                      00544 
+                      00312     INCLUDE <NOTAS_A.INC>
+                      00001 ;**************************** Librería "NOTASB.INC" *********************************
+                      00002 ;
+                      00003 ;       ===================================================================
+                      00004 ;   NOTAS PARA FAIRY THEME  DE ZELDA A LINK TO THE PAST
+                      00005 ;   JESUS EDUARDO LOPEZ RODRIGUEZ
+                      00006 ;       ===================================================================
+                      00007 
+                      00008 ; ZONA DE DATOS *********************************************************************
+                      00009 
+                      00010         CBLOCK
+                      00011         ENDC
+                      00012 
+026D                  00013 RE4
+                      00014 ;851us = .851x2 = 1.702ms  387/1.702 = 227      ///////////  D4  ////////////
+026D   3071           00015     MOVLW D'113'
+026E   008C           00016     MOVWF C_Tempo
+026F   2???           00017     CALL D4;RE 4 octava
+0270   0008           00018     return
+0271                  00019 MI4
+                      00020 ;758us = .758msx2 = 1.516ms 387/1.516 = 255     ///////////  E4  ////////////
+0271   307F           00021     MOVLW D'127'
+0272   008C           00022     MOVWF C_Tempo
+0273   2???           00023     CALL E4;MI 4 octava
+0274   0008           00024     return
+0275                  00025 SOL4
+                      00026 ;637us = .637msx2 = 1.274ms 387/1.274 = 303     ///////////  G4  ////////////
+0275   3097           00027     MOVLW D'151'
+0276   008C           00028     MOVWF C_Tempo
+0277   2???           00029     CALL G4; SOL 4 octava
+0278   0008           00030     return
+0279                  00031 SIb4
+                      00032 ;470us = .47ms x 2 = .94ms 387/.94 = 411/2=       ///////////  Bb4  ////////////
+0279   30CD           00033     MOVLW D'205'
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 18
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+027A   008C           00034     MOVWF C_Tempo
+027B   2???           00035     CALL Bb4;Si# 4 octava
+027C   0008           00036     return
+027D                  00037 RE5
+                      00038 ;425us .425ms x 2 = .850ms 387/.850 = 455/2=227      ///////////  D5  ////////////
+027D   30E3           00039     MOVLW D'227'
+027E   008C           00040     MOVWF C_Tempo
+027F   2???           00041     CALL D5;RE 5 octava
+0280   0008           00042     return
+0281                  00043 MI5
+0281   30FF           00044     MOVLW D'255'
+0282   008C           00045     MOVWF C_Tempo
+0283   2???           00046     CALL E5;Mi 5 octava
+0284   3003           00047     MOVLW D'3'
+0285   008C           00048     MOVWF C_Tempo
+0286   2???           00049     CALL E5;
+0287   0008           00050     return
+0288                  00051 LA5
+                      00052 ; 284us .248ms x 2 = .496ms 387/.496 = 780/2= 390     ///////////  A5  ////////////
+0288   30FF           00053     MOVLW D'255'
+0289   008C           00054     MOVWF C_Tempo
+028A   2???           00055     CALL A5;LA 5 octava
+028B   3087           00056     MOVLW D'135'
+028C   008C           00057     MOVWF C_Tempo
+028D   2???           00058     CALL A5;
+028E   0008           00059     return
+028F                  00060 SOL5
+                      00061 ;318us = .318ms x 2 = .636ms 387/.636 = 608/2=304     ///////////  G5  ////////////
+028F   30FF           00062     MOVLW D'255'
+0290   008C           00063     MOVWF C_Tempo
+0291   2???           00064     CALL G5; SOL 5 octava
+0292   3031           00065     MOVLW D'49'
+0293   008C           00066     MOVWF C_Tempo
+0294   2???           00067     CALL G5;
+0295   0008           00068     return
+0296                  00069 SOLb5
+                      00070 ;301us = .301ms = .602ms 387/.602 = 642/2=321         ///////////  Gb5  ////////////
+0296   30FF           00071     MOVLW D'255'
+0297   008C           00072     MOVWF C_Tempo
+0298   2???           00073     CALL Gb5; ;SOL# 5 OCT
+0299   3042           00074     MOVLW D'66'
+029A   008C           00075     MOVWF C_Tempo
+029B   2???           00076     CALL Gb5
+029C   0008           00077     return
+029D                  00078 DO5
+                      00079 ;477us = .477Ms x 2= .954ms  387/.954 = 405/2 202     ///////////  C5  ////////////
+029D   30CA           00080     MOVLW D'202'
+029E   008C           00081     MOVWF C_Tempo
+029F   2???           00082     CALL C5; DO 5 octava
+02A0   0008           00083     return
+02A1                  00084 LA4
+                      00085 ;568US = .568MS X 2 = 1.13ms 387/1.13 = 342/2=171     ///////////  A4   ////////////
+02A1   30AB           00086     MOVLW D'171'
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 19
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+02A2   008C           00087     MOVWF C_Tempo
+02A3   2???           00088     CALL A4; LA 4 octava
+02A4   0008           00089     return
+02A5                  00090 FA4
+                      00091 ;715us = .715MS X 1.43ms  387/1.43 = 270/2=135        ///////////  F4   ////////////
+02A5   3087           00092     MOVLW D'135'
+02A6   008C           00093     MOVWF C_Tempo
+02A7   2???           00094     CALL F4; FA 4 octava
+02A8   0008           00095     return
+02A9                  00096 FA5
+                      00097 ;357us = .357ms x 2 = .714ms 387/.714 = 542/2=271     ///////////  F5   ////////////
+02A9   30FF           00098     MOVLW D'255'
+02AA   008C           00099     MOVWF C_Tempo
+02AB   2???           00100     CALL F5; FA 5 octava
+02AC   3010           00101     MOVLW D'16'
+02AD   008C           00102     MOVWF C_Tempo
+02AE   2???           00103     CALL F5;
+02AF   0008           00104     return
+02B0                  00105 MIb5
+                      00106 ;364 = .364 x 2 = .728ms  387/.728 = 531/2= 265       ///////////   Eb5  ////////////
+02B0   30FF           00107     MOVLW D'255'
+02B1   008C           00108     MOVWF C_Tempo
+02B2   2???           00109     CALL Eb5;MI# 5 octava
+02B3   300A           00110     MOVLW D'10'
+02B4   008C           00111     MOVWF C_Tempo
+02B5   2???           00112     CALL Eb5;
+02B6   0008           00113     return
+                      00114 
+02B7                  00115 REb4
+                      00116 ;803us = .801 x 2= 1.6ms 387/1.6 = 241/2=120       ///////////  Db4  ////////////
+02B7   3078           00117     MOVLW D'120'
+02B8   008C           00118     MOVWF C_Tempo
+02B9   2???           00119     CALL Db4;RE# 4 octava
+02BA   0008           00120     return
+                      00121 
+02BB                  00122 REb5
+                      00123 ;401us = .401 x 2= .802ms 387/.802 = 482/2 = 241       ///////////  Db5  ////////////
+02BB   30F1           00124     MOVLW D'241'
+02BC   008C           00125     MOVWF C_Tempo
+02BD   2???           00126     CALL Db5;RE# 5 octava
+02BE   0008           00127     return
+02BF                  00128 SIb5
+                      00129 ;253us = .253 x 2 = .506ms 387/.506 = 764/2= 382      ///////////  Bb5  ////////////
+02BF   30FF           00130     MOVLW D'255'
+02C0   008C           00131     MOVWF C_Tempo
+02C1   2???           00132     CALL Bb5; SI# 5 octava
+02C2   307F           00133     MOVLW D'127'
+02C3   008C           00134     MOVWF C_Tempo
+02C4   2???           00135     CALL Bb5;
+02C5   0008           00136     return
+02C6                  00137 SOLb4
+                      00138 ;601us = 1.2ms 387/1.2 = 322/2 =161                     ///////////  Gb4  ////////////
+02C6   30A1           00139     MOVLW D'161'
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 20
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+02C7   008C           00140     MOVWF C_Tempo
+02C8   2???           00141     CALL Gb4; SOL# 4 octava
+02C9   0008           00142     return
+02CA                  00143 LAb5
+                      00144 ;268us = .536ms 387/.536 = 722/2 = 361                  ///////////  Ab5    ////////////
+02CA   30FF           00145     MOVLW D'255'
+02CB   008C           00146     MOVWF C_Tempo
+02CC   2???           00147     CALL Ab5; LA# 5 octava
+02CD   306A           00148     MOVLW D'106'
+02CE   008C           00149     MOVWF C_Tempo
+02CF   2???           00150     CALL Ab5;
+02D0   0008           00151     return
+02D1                  00152 DO6
+                      00153 ;238us = ,476ms 387/.476 = 813/2 = 406                  ///////////  C6    ////////////
+02D1   30FF           00154     MOVLW D'255'
+02D2   008C           00155     MOVWF C_Tempo
+02D3   2???           00156     CALL C6; DO 6 octava
+02D4   3097           00157     MOVLW D'151'
+02D5   008C           00158     MOVWF C_Tempo
+02D6   2???           00159     CALL C6;
+02D7   0008           00160     return
+                      00161 
+02D8                  00162 SI4
+                      00163 ;506us = 1.012ms 387/1.012 = 382/2                   ///////////  B4    ////////////
+02D8   30BF           00164     MOVLW D'191'
+02D9   008C           00165     MOVWF C_Tempo
+02DA   2???           00166     CALL B4; DO 6 octava
+02DB   0008           00167     return
+                      00168 
+                      00169 ;       ===================================================================
+                      00170 ;
+                      00171 ;       ===================================================================
+                      00172 
+                      00313     INCLUDE <NOTAS_B.INC>
+                      00001 ;**************************** Librería "NOTASB.INC" *********************************
+                      00002 ;
+                      00003 ;       ===================================================================
+                      00004 ;   NOTAS PARA FAIRY THEME  DE ZELDA A LINK TO THE PAST
+                      00005 ;   JESUS EDUARDO LOPEZ RODRIGUEZ
+                      00006 ;       ===================================================================
+                      00007 
+                      00008 ; ZONA DE DATOS *********************************************************************
+                      00009 
+                      00010         CBLOCK
+                      00011         ENDC
+                      00012 
+02DC                  00013 RE4_
+                      00014 ;851us = .851x2 = 1.702ms  387/1.702 = 227      ///////////  D4  ////////////
+02DC   30E3           00015     MOVLW D'227'
+02DD   008C           00016     MOVWF C_Tempo
+02DE   2???           00017     CALL D4;RE 4 octava
+02DF   0008           00018     return
+02E0                  00019 MI4_
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 21
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00020 ;758us = .758msx2 = 1.516ms 387/1.516 = 255     ///////////  E4  ////////////
+02E0   30FF           00021     MOVLW D'255'
+02E1   008C           00022     MOVWF C_Tempo
+02E2   2???           00023     CALL E4;MI 4 octava
+02E3   0008           00024     return
+02E4                  00025 SOL4_
+                      00026 ;637us = .637msx2 = 1.274ms 387/1.274 = 303     ///////////  G4  ////////////
+02E4   30FF           00027     MOVLW D'255'
+02E5   008C           00028     MOVWF C_Tempo
+02E6   2???           00029     CALL G4; SOL 4 octava
+02E7   3030           00030     MOVLW D'48'
+02E8   008C           00031     MOVWF C_Tempo
+02E9   2???           00032     CALL G4;
+02EA   0008           00033     return
+02EB                  00034 SIb4_
+                      00035 ;470us = .47ms x 2 = .94ms 387/.94 = 411       ///////////  Bb4  ////////////
+02EB   30D3           00036     MOVLW D'211'
+02EC   008C           00037     MOVWF C_Tempo
+02ED   2???           00038     CALL Bb4;Si# 4 octava
+02EE   30C8           00039     MOVLW D'200'
+02EF   008C           00040     MOVWF C_Tempo
+02F0   2???           00041     CALL Bb4;
+02F1   0008           00042     return
+02F2                  00043 RE5_
+                      00044 ;425us .425ms x 2 = .850ms 387/.850 = 455      ///////////  D5  ////////////
+02F2   30FF           00045     MOVLW D'255'
+02F3   008C           00046     MOVWF C_Tempo
+02F4   2???           00047     CALL D5;RE 5 octava
+02F5   30C8           00048     MOVLW D'200'
+02F6   008C           00049     MOVWF C_Tempo
+02F7   2???           00050     CALL D5;
+02F8   0008           00051     return
+02F9                  00052 MI5_
+02F9   30FA           00053     MOVLW D'250'
+02FA   008C           00054     MOVWF C_Tempo
+02FB   2???           00055     CALL E5;Mi 5 octava
+02FC   30FA           00056     MOVLW D'250'
+02FD   008C           00057     MOVWF C_Tempo
+02FE   2???           00058     CALL E5;
+02FF   3011           00059     MOVLW D'17'
+0300   008C           00060     MOVWF C_Tempo
+0301   2???           00061     CALL E5;
+0302   0008           00062     return
+0303                  00063 LA5_
+                      00064 ; 284us .248ms x 2 = .496ms 387/.496 = 780     ///////////  A5  ////////////
+0303   30FF           00065     MOVLW D'255'
+0304   008C           00066     MOVWF C_Tempo
+0305   2???           00067     CALL A5;LA 5 octava
+0306   30FF           00068     MOVLW D'255'
+0307   008C           00069     MOVWF C_Tempo
+0308   2???           00070     CALL A5;
+0309   30FF           00071     MOVLW D'255'
+030A   008C           00072     MOVWF C_Tempo
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 22
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+030B   2???           00073     CALL A5;
+030C   300F           00074     MOVLW D'15'
+030D   008C           00075     MOVWF C_Tempo
+030E   2???           00076     CALL A5;
+030F   0008           00077     return
+0310                  00078 SOL5_
+                      00079 ;318us = .318ms x 2 = .636ms 387/.636 = 608     ///////////  G5  ////////////
+0310   30FF           00080     MOVLW D'255'
+0311   008C           00081     MOVWF C_Tempo
+0312   2???           00082     CALL G5; SOL 5 octava
+0313   30FF           00083     MOVLW D'255'
+0314   008C           00084     MOVWF C_Tempo
+0315   2???           00085     CALL G5;
+0316   3062           00086     MOVLW D'98'
+0317   008C           00087     MOVWF C_Tempo
+0318   2???           00088     CALL G5;
+0319   0008           00089     return
+031A                  00090 SOLb5_
+                      00091 ;301us = .301ms = .602ms 387/.602 = 642         ///////////  Gb5  ////////////
+031A   30FF           00092     MOVLW D'255'
+031B   008C           00093     MOVWF C_Tempo
+031C   2???           00094     CALL Gb5; ;SOL# 5 OCT
+031D   30FF           00095     MOVLW D'255'
+031E   008C           00096     MOVWF C_Tempo
+031F   2???           00097     CALL Gb5
+0320   3084           00098     MOVLW D'132'
+0321   008C           00099     MOVWF C_Tempo
+0322   2???           00100     CALL Gb5
+0323   0008           00101     return
+0324                  00102 DO5_
+                      00103 ;477us = .477Ms x 2= .954ms  387/.954 = 405     ///////////  C5  ////////////
+0324   30FF           00104     MOVLW D'255'
+0325   008C           00105     MOVWF C_Tempo
+0326   2???           00106     CALL C5; DO 5 octava
+0327   3096           00107     MOVLW D'150'
+0328   008C           00108     MOVWF C_Tempo
+0329   2???           00109     CALL C5;
+032A   0008           00110     return
+032B                  00111 LA4_
+                      00112 ;568US = .568MS X 2 = 1.13ms 387/1.13 = 342     ///////////  A4   ////////////
+032B   30FF           00113     MOVLW D'255'
+032C   008C           00114     MOVWF C_Tempo
+032D   2???           00115     CALL A4; LA 4 octava
+032E   3057           00116     MOVLW D'87'
+032F   008C           00117     MOVWF C_Tempo
+0330   2???           00118     CALL A4;
+0331   0008           00119     return
+0332                  00120 FA4_
+                      00121 ;715us = .715MS X 1.43ms  387/1.43 = 270        ///////////  F4   ////////////
+0332   30FF           00122     MOVLW D'255'
+0333   008C           00123     MOVWF C_Tempo
+0334   2???           00124     CALL F4; FA 4 octava
+0335   300F           00125     MOVLW D'15'
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 23
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0336   008C           00126     MOVWF C_Tempo
+0337   2???           00127     CALL F4;
+0338   0008           00128     return
+0339                  00129 FA5_
+                      00130 ;357us = .357ms x 2 = .714ms 387/.714 = 542     ///////////  F5   ////////////
+0339   30FF           00131     MOVLW D'255'
+033A   008C           00132     MOVWF C_Tempo
+033B   2???           00133     CALL F5; FA 5 octava
+033C   30FF           00134     MOVLW D'255'
+033D   008C           00135     MOVWF C_Tempo
+033E   2???           00136     CALL F5;
+033F   3020           00137     MOVLW D'32'
+0340   008C           00138     MOVWF C_Tempo
+0341   2???           00139     CALL F5;
+0342   0008           00140     return
+0343                  00141 MIb5_
+                      00142 ;364 = .364 x 2 = .728ms  387/.728 = 531       ///////////   Eb5  ////////////
+0343   30FF           00143     MOVLW D'255'
+0344   008C           00144     MOVWF C_Tempo
+0345   2???           00145     CALL Eb5;MI# 5 octava
+0346   30FF           00146     MOVLW D'255'
+0347   008C           00147     MOVWF C_Tempo
+0348   2???           00148     CALL Eb5;
+0349   3015           00149     MOVLW D'21'
+034A   008C           00150     MOVWF C_Tempo
+034B   2???           00151     CALL Eb5;
+034C   0008           00152     return
+                      00153 
+034D                  00154 REb4_
+                      00155 ;803us = .801 x 2= 1.6ms 387/1.6 = 241       ///////////  Db4  ////////////
+034D   30F1           00156     MOVLW D'241'
+034E   008C           00157     MOVWF C_Tempo
+034F   2???           00158     CALL Db4;RE# 4 octava
+0350   0008           00159     return
+                      00160 
+0351                  00161 REb5_
+                      00162 ;401us = .401 x 2= .802ms 387/.802 = 482       ///////////  Db5  ////////////
+0351   30FF           00163     MOVLW D'255'
+0352   008C           00164     MOVWF C_Tempo
+0353   2???           00165     CALL Db5;RE# 5 octava
+0354   30E3           00166     MOVLW D'227'
+0355   008C           00167     MOVWF C_Tempo
+0356   2???           00168     CALL Db5;
+0357   0008           00169     return
+0358                  00170 SIb5_
+                      00171 ;253us = .253 x 2 = .506ms 387/.506 = 764      ///////////  Bb5  ////////////
+0358   30FF           00172     MOVLW D'255'
+0359   008C           00173     MOVWF C_Tempo
+035A   2???           00174     CALL Bb5; SI# 5 octava
+035B   30FF           00175     MOVLW D'255'
+035C   008C           00176     MOVWF C_Tempo
+035D   2???           00177     CALL Bb5;
+035E   30FE           00178     MOVLW D'254'
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 24
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+035F   008C           00179     MOVWF C_Tempo
+0360   2???           00180     CALL Bb5;
+0361   0008           00181     return
+0362                  00182 SOLb4_
+                      00183 ;601us = 1.2ms 387/1.2 = 322                    ///////////  Gb4  ////////////
+0362   30FF           00184     MOVLW D'255'
+0363   008C           00185     MOVWF C_Tempo
+0364   2???           00186     CALL Gb4; SOL# 4 octava
+0365   3043           00187     MOVLW D'67'
+0366   008C           00188     MOVWF C_Tempo
+0367   2???           00189     CALL Gb4;
+0368   2???           00190     call Retardo_1ms
+0369   0008           00191     return
+036A                  00192 LAb5_
+                      00193 ;268us = .536ms 387/.536 = 722                  ///////////  Ab5    ////////////
+036A   30FF           00194     MOVLW D'255'
+036B   008C           00195     MOVWF C_Tempo
+036C   2???           00196     CALL Ab5; LA# 5 octava
+036D   30FF           00197     MOVLW D'255'
+036E   008C           00198     MOVWF C_Tempo
+036F   2???           00199     CALL Ab5;
+0370   30D4           00200     MOVLW D'212'
+0371   008C           00201     MOVWF C_Tempo
+0372   2???           00202     CALL Ab5;
+0373   0008           00203     return
+0374                  00204 DO6_
+                      00205 ;238us = ,476ms 387/.476 = 813                  ///////////  C6    ////////////
+0374   30FF           00206     MOVLW D'255'
+0375   008C           00207     MOVWF C_Tempo
+0376   2???           00208     CALL C6; DO 6 octava
+0377   30FF           00209     MOVLW D'255'
+0378   008C           00210     MOVWF C_Tempo
+0379   2???           00211     CALL C6;
+037A   30FF           00212     MOVLW D'255'
+037B   008C           00213     MOVWF C_Tempo
+037C   2???           00214     CALL C6;
+037D   3030           00215     MOVLW D'48'
+037E   008C           00216     MOVWF C_Tempo
+037F   2???           00217     CALL C6;
+0380   0008           00218     return
+                      00219 
+0381                  00220 SI4_
+                      00221 ;506us = 1.012ms 387/1.012 = 382                  ///////////  B4    ////////////
+0381   30FF           00222     MOVLW D'255'
+0382   008C           00223     MOVWF C_Tempo
+0383   2???           00224     CALL B4; DO 6 octava
+0384   307F           00225     MOVLW D'127'
+0385   008C           00226     MOVWF C_Tempo
+0386   2???           00227     CALL B4;
+0387   0008           00228     return
+                      00229 
+                      00230 ;       ===================================================================
+                      00231 ;       
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 25
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00232 ;       ===================================================================
+                      00233 
+                      00234 
+                      00235 
+                      00236 
+3FF1                  00314     END
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 26
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+A4                                0000016D
+A5                                0000017C
+Ab5                               0000018B
+B4                                0000020F
+Bb4                               00000137
+Bb5                               00000144
+C                                 00000000
+C5                                000001F1
+C6                                00000200
+C_Tempo                           0000000C
+D4                                000000E9
+D5                                00000151
+DC                                00000001
+DO5                               0000029D
+DO5_                              00000324
+DO6                               000002D1
+DO6_                              00000374
+Db4                               000001C3
+Db5                               000001D0
+E4                                000000FC
+E5                                0000015E
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+Eb5                               000001D9
+F                                 00000001
+F4                                00000198
+F5                                000001A7
+F6                                000001B4
+FA4                               000002A5
+FA4_                              00000332
+FA5                               000002A9
+FA5_                              00000339
+FIN_INTER                         000000E3
+FSR                               00000004
+FairyTheme                        00000010
+G4                                0000010E
+G5                                0000011F
+GIE                               00000007
+Gb4                               000001E8
+Gb5                               0000012E
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTER                             0000006B
+INTF                              00000001
+IRP                               00000007
+Inicio                            00000005
+LA4                               000002A1
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 27
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+LA4_                              0000032B
+LA5                               00000288
+LA5_                              00000303
+LAb5                              000002CA
+LAb5_                             0000036A
+MI4                               00000271
+MI4_                              000002E0
+MI5                               00000281
+MI5_                              000002F9
+MIb5                              000002B0
+MIb5_                             00000343
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+R1Decima_BucleExterno             00000263
+R1Decima_BucleExterno2            00000261
+R1Decima_BucleInterno             00000265
+R1ms_BucleExterno                 0000024D
+R1ms_BucleInterno                 0000024F
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RE4                               0000026D
+RE4_                              000002DC
+RE5                               0000027D
+RE5_                              000002F2
+RESET                             00000000
+REb4                              000002B7
+REb4_                             0000034D
+REb5                              000002BB
+REb5_                             00000351
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 28
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RP0                               00000005
+RP1                               00000006
+R_ContA                           0000000D
+R_ContB                           0000000E
+R_ContC                           0000000F
+RetardoMicros                     00000239
+Retardo_100micros                 00000233
+Retardo_100ms                     0000023F
+Retardo_10micros                  00000226
+Retardo_10ms                      00000245
+Retardo_10s                       00000257
+Retardo_1Decima                   00000260
+Retardo_1ms                       0000024B
+Retardo_1s                        0000025D
+Retardo_200micros                 00000230
+Retardo_200ms                     0000023D
+Retardo_20micros                  00000238
+Retardo_20ms                      00000243
+Retardo_20s                       00000255
+Retardo_2ms                       00000249
+Retardo_2s                        0000025B
+Retardo_4micros                   0000022C
+Retardo_500micros                 0000022D
+Retardo_500ms                     0000025F
+Retardo_50micros                  00000235
+Retardo_50ms                      00000241
+Retardo_5micros                   0000022B
+Retardo_5ms                       00000247
+Retardo_5s                        00000259
+Retardos_ms                       0000024C
+Rmicros_Bucle                     0000023A
+SAVE_STATUS                       00000011
+SAVE_W                            00000010
+SI4                               000002D8
+SI4_                              00000381
+SIb4                              00000279
+SIb4_                             000002EB
+SIb5                              000002BF
+SIb5_                             00000358
+SOL4                              00000275
+SOL4_                             000002E4
+SOL5                              0000028F
+SOL5_                             00000310
+SOLb4                             000002C6
+SOLb4_                            00000362
+SOLb5                             00000296
+SOLb5_                            0000031A
+STATUS                            00000003
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TMR0                              00000001
+MPASM 5.53                    PRACTICA12.ASM   12-2-2022  14:07:07         PAGE 29
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR0IE                            00000005
+TMR0IF                            00000002
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_CONFIG                           00002007
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     3 reported,     0 suppressed
+
+
